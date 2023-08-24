@@ -1,0 +1,21 @@
+﻿Here you'll find a summary of each class in the interaction system, with details on their purpose, functionality, and usage:
+
+1.[b]PlayerInteractionHandler[/b] A MonoBehaviour that resides on the player object, and it is responsible for handling player interactions with objects in the game. It casts a ray from the center of the screen to detect interactable objects within arm's reach and calls the `Interact` method on them. It also updates the crosshair based on the type of interactable object detected.
+
+2.[b]InteractionType[/b] A ScriptableObject that defines a specific type of interaction, including the interaction's color and crosshair sprite. It's used to categorize and configure different interactions in the game.
+
+3.[b]InteractionUIManager[/b] A MonoBehaviour class responsible for managing the UI elements related to interactions, including the crosshair. It listens to interaction events and updates the UI accordingly. Typically placed on a UI manager object in the scene.
+
+4.[b]InteractableBase[/b] An abstract MonoBehaviour class that all interactable objects derive from. It holds information like the interaction type and state and has virtual methods for interacting and playing sounds.
+
+5.[b]LightSwitchInteraction[/b] A specific implementation of TwoStateInteractable, representing a light switch object in the game. It includes the logic for switching states and playing appropriate sounds.
+
+6.[b]ObjectID[/b] A MonoBehaviour class that provides a unique ID for objects. It automatically generates a GUID upon creation, ensuring uniqueness across different runs. Used on objects that require saving/loading.
+
+7.[b]SoundSystem[/b] A singleton MonoBehaviour that serves as a centralized point for sound playback. It references a SoundSystemImplementation ScriptableObject, allowing for different sound system behaviors.
+
+8.[b]SoundSystemImplementation[/b] An abstract ScriptableObject that defines the interface for sound playing. Specific implementations must inherit from this class and implement the sound playing logic.
+
+9.[b]UnitySoundSystem[/b] A ScriptableObject that inherits from SoundSystemImplementation and implements the logic to play sounds using Unity's audio system. Casts the given object to AudioClip and plays it.
+
+10.[b]CustomSoundSystem[/b] A ScriptableObject that inherits from SoundSystemImplementation and implements the logic to play sounds using your custom sound system. Casts the given object to AudioObject and plays it.
