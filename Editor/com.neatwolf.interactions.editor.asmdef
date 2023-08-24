@@ -2,7 +2,7 @@
     "name": "com.neatwolf.interactions.editor",
     "rootNamespace": "NeatWolf.Interactions.Editor",
     "references": [
-        "GUID:2a0b2573c344c84429369c27d1de0760"
+        "GUID:5fb44eaaa4ca51449a840f2f78b8d9bf"
     ],
     "includePlatforms": [
         "Editor"
